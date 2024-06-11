@@ -35,7 +35,7 @@ const newNames = [];
     const root = document.getElementById('root');
     //* 식별
 
-    const tagComponent = (tagName, textNode) =>{ //*매개변수 뚫기
+    const tagComponent = (tagName, textNode) => { //*매개변수 뚫기
       return `<${tagName}>${textNode}</${tagName}>`;
     };
     //* 함수선언 push join foreach
@@ -46,23 +46,28 @@ const newNames = [];
     //   });
     // };
 
-    const app = () => {
-      names.forEach(name => {
-        newNames.push(name);
-      });
-    };
+    
+    names.forEach((name) => {
+      newNames.push(name);
+    });
+
     //*함수선언, 조립, 반복문
+    const test = newNames.join();
+    
+    const app = () => {
+      for (let i = 0; i < newNames.length; i++){
+        console.log(`${tagComponent("h1" , newNames[i])}`);
+      }};
+    
 
-    console.log(app())
-
+    console.log(app());
+    
 
     const render = () => {
       root.innerHTML = app(); 
-    }
-    //* 함수선언
+    };
 
     render();
-    //* render 호출
 
   </script>
   
