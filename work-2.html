@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script>
+    const root = document.getElementById('root');
+    //* 식별
+
+    const tagComponent = (tagName, textNode) =>{ //*매개변수 뚫기
+      return `<${tagName}>${textNode}</${tagName}>`;
+    };
+    //* 함수선언
+
+    const app = () => {
+      return `
+      ${tagComponent("h1", "우애애앵")}
+      ${tagComponent("h2", "우애애앵")}
+      ${tagComponent("h3", "우애애앵")}
+      `;
+    };
+    //*함수선언, 조립, 반복문
+
+    console.log(app())
+
+
+    const render = () => {
+      root.innerHTML = app(); // ! 내장되어 있는 dom api 
+    }
+    //* 함수선언
+
+    render();
+    //* render 호출
+
+  </script>
+</body>
+</html>
