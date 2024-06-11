@@ -40,34 +40,20 @@ const newNames = [];
     };
     //* 함수선언 push join foreach
 
-    // const app = () => {
-    //   names.forEach(name => {
-    //     newNames.push(`${tagComponent("h1", name)}`);
-    //   });
-    // };
 
-    
-    names.forEach((name) => {
-      newNames.push(name);
-    });
-
-    //*함수선언, 조립, 반복문
-    const test = newNames.join();
-    
     const app = () => {
-      for (let i = 0; i < newNames.length; i++){
-        console.log(`${tagComponent("h1" , newNames[i])}`);
-      }};
-    
+    names.forEach((name) => {
+      newNames.push(`${tagComponent("li", name)}`);
+    });
+    return `${tagComponent("ul",newNames.join(''))}`;
+  };
 
-    console.log(app());
-    
+  
+  const render = () => {
+    root.innerHTML = app(); 
+  };
 
-    const render = () => {
-      root.innerHTML = app(); 
-    };
-
-    render();
+  render();
 
   </script>
   
